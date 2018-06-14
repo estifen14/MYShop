@@ -1,10 +1,8 @@
 package org.myshop.webapp;
 
-import org.springframework.web.WebApplicationInitializer;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
+import javax.servlet.Filter;
 
 public class MYShopWebappInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     protected Class<?>[] getRootConfigClasses() {
@@ -17,5 +15,10 @@ public class MYShopWebappInitializer extends AbstractAnnotationConfigDispatcherS
 
     protected String[] getServletMappings() {
         return new String[] {"/"};
+    }
+
+    @Override
+    protected Filter[] getServletFilters() {
+        return new Filter[]{};
     }
 }
